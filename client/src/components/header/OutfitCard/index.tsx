@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { VOTE_OUTFIT, SAVE_OUTFIT, REMOVE_OUTFIT } from '../../utils/mutations';
-import Auth from '../../utils/auth';
-import { Outfit, VoteOutfitResponse, SaveOutfitResponse, RemoveOutfitResponse } from '../../types';
+import { VOTE_OUTFIT, SAVE_OUTFIT, REMOVE_OUTFIT } from '../../../utils/mutations';
+import Auth from '../../../utils/auth';
+import { Outfit, VoteOutfitResponse, SaveOutfitResponse, RemoveOutfitResponse } from '../../../types';
 
 interface OutfitCardProps {
   outfit: Outfit;
