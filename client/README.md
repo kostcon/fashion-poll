@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+# Fashion Poll - Social Fashion Voting Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+Fashion Poll is a dynamic web application where users can share, vote on, and save their favorite outfits. Built with a modern tech stack including React, TypeScript, GraphQL, Node.js, and MongoDB, this platform provides a seamless experience for fashion enthusiasts to engage with and discover new styles.
 
-## Available Scripts
+## Features
+- User authentication with JWT
+- Create and share outfit posts
+- Vote on outfits (upvote/downvote)
+- Save favorite outfits
+- Filter outfits by category
+- Responsive design for all devices
+- Real-time updates using GraphQL
 
-In the project directory, you can run:
+## Technologies Used
+- Frontend:
+  - React with TypeScript
+  - Apollo Client
+  - React Router
+  - JWT Authentication
+  - Bootstrap for styling
+  
+- Backend:
+  - Node.js with Express
+  - TypeScript
+  - GraphQL with Apollo Server
+  - MongoDB with Mongoose
+  - JWT for authentication
 
-### `npm start`
+- Deployment:
+  - Render for hosting
+  - MongoDB Atlas for database
+  - GitHub Actions for CI/CD
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation & Setup
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/fashion-poll.git
+cd fashion-poll
+```
 
-### `npm test`
+2. Install dependencies:
+```bash
+# Install server dependencies
+cd server
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Install client dependencies
+cd ../client
+npm install
+```
 
-### `npm run build`
+3. Create a .env file in the server directory:
+```env
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+PORT=3001
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Start the development servers:
+```bash
+# Start server
+cd server
+npm run dev
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Start client (in a new terminal)
+cd client
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. Visit `http://localhost:3000` in your browser
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
+This application is deployed on Render. The process includes:
+1. Connecting your GitHub repository to Render
