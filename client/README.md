@@ -3,8 +3,6 @@
 ## Description
 Fashion Poll is a TypeScript-based web application where users can share, vote on, and save their favorite outfits. Built with a modern tech stack including React, TypeScript, GraphQL, Node.js, and MongoDB, this platform provides a seamless experience for fashion enthusiasts to engage with and discover new styles.
 
-![Fashion Poll Screenshot](insert_screenshot_here.png)
-
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
