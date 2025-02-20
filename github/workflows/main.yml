@@ -1,0 +1,60 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          **/node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install Dependencies
+      run: |
+        cd server
+        npm install
+        cd ../client
+        npm install
+        
+    - name: Type Check
+      run: |
+        cd server
+        npx tsc --noEmit
+        cd ../client
+        npx tsc --noEmit
+        
+    - name: Build
+      run: |
+        cd server
+        npm run build
+        cd ../client
+        CI=false npm run build
+
+    - name: Run Tests (if available)
+      run: |
+        cd server
+        npm test --if-present
+        cd ../client
+        npm test --if-present
